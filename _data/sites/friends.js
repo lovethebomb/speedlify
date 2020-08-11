@@ -1,5 +1,5 @@
 module.exports = {
-	description: "Front-end Testing Tools",
+	description: "Friends & Others",
 	// skip if localhost
 	// skip if this is a new fork of the speedlify (not Zach’s)
 	skip: !process.env.CONTEXT || process.env.SITE_NAME !== "speedlify",
@@ -9,18 +9,19 @@ module.exports = {
 		//           and we can reset chrome with each run instead of
 		//           each site in every run (it’s faster)
 		// Use "site" if sites are all on the same origin and share assets.
-		freshChrome: "site",
+		freshChrome: "run",
 	},
 	urls: [
-		"https://eslint.org/",
-		"https://qunitjs.com/",
-		"https://karma-runner.github.io/latest/index.html",
-		"https://gulpjs.com/",
-		"https://webhint.io/",
-		"https://gruntjs.com/",
-		"https://theintern.io/",
-		"https://istanbul.js.org/",
-		"https://webdriver.io/",
-		"https://mochajs.org/"
+		"https://www.ilotreseau.net/",
+		"https://www.ilot.sh/",
+		"https://www.dysosmus.net/"
+		"https://www.inesdurao.me/",
+		"https://www.stevenmengin.com/",
+		"https://www.nico.computer/",
+		"https://www.lucas.computer/",
+		"https://www.drunkenbyt.es/",
+		"https://plantjes.lucas.computer/",
+		"https://dnd.lucas.computer/",
+		"https://disco.lucas.computer/",
 	]
 };
