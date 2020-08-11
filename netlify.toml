@@ -12,6 +12,6 @@ package = "./plugins/keep-data-cache"
 
 [[redirects]]
   from = "https://speedlify-ilot.netlify.app"
-  to = "https://speed.lot.sh"
+  to = "https://speed.ilot.sh"
   status = 301
   force = true
