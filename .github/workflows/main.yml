@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Curl request
-        run: curl -X POST -d {} $DAILY_BUILD_HOOK
+        run: curl -X POST -d {} ${{ secrets.DAILY_BUILD_HOOK }}
