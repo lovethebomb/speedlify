@@ -17,7 +17,7 @@ module.exports = {
 		"https://www.dysosmus.net/",
 		"https://www.inesdurao.me/",
 		"https://www.stevenmengin.com/",
-		"https://www.nico.computer/",
+		"http://nico.computer/",
 		"https://www.lucas.computer/",
 		"https://www.drunkenbyt.es/",
 		"https://plantjes.lucas.computer/",
