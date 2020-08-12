@@ -2,8 +2,6 @@
 
 name: Trigger Netlify Build
 on:
-  push:
-    branches: [ live ]
   schedule:
     # Run at 0815 daily
     - cron: '0 6 * * *'
