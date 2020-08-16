@@ -13,15 +13,12 @@ module.exports = {
 	},
 	urls: [
 		"https://www.ilotreseau.net/",
-		"https://www.ilot.sh/",
+		"https://www.iconomoteur.fr/",
 		"https://www.dysosmus.net/",
 		"https://www.inesdurao.me/",
 		"https://www.stevenmengin.com/",
 		"http://nico.computer/",
 		"https://www.lucas.computer/",
-		"https://www.drunkenbyt.es/",
-		"https://plantjes.lucas.computer/",
-		"https://dnd.lucas.computer/",
-		"https://disco.lucas.computer/"
+		"https://www.drunkenbyt.es/"
 	]
 };
