@@ -26,14 +26,8 @@ counts:
 			</tr>
 		</thead>
 		<tbody>
-		{%- if sites[vertical].options.useManualResultsDir %}
-		{%- set categoryResults = manual %}
-		{%- else %}
-		{%- set categoryResults = results %}
-		{%- endif %}
-		{% set showRank = true %}
-
-		{%- for site in categoryResults | getSites(sites, vertical, isolatedKeys) | sortCumulativeScore %}
+		{%- set showRank = true %}
+		{%- for site in results | getSites(sites, vertical, isolatedKeys) | sortCumulativeScore %}
 			{%- set newestKey = site | getObjectKey(":newest") %}
 			{%- set key = site | getObjectKey %}
 			{%- set hundos = 0 %}
@@ -43,12 +37,18 @@ counts:
 				{%- set notGreenCircleCount = site[newestKey] | notGreenCircleCount %}
 				{%- if notGreenCircleCount >= 3 and sites[vertical].options and sites[vertical].options.noShame %}{% set showRank = false %}{% endif %}
 			{% endif %}
-			<tr class="leaderboard-list-entry">
-				<td class="leaderboard-number">{% if showRank %}#{{ loop.index }}{% endif %}</td>
+			<tr class="leaderboard-list-entry{% if site[newestKey].ranks and loop.index != site[newestKey].ranks.cumulative %} leaderboard-list-entry-badrank{% endif %}">
+				<td class="leaderboard-number">
+					{% if showRank %}#{{ loop.index }}{% endif %}
+				</td>
 				<td class="leaderboard-hide-md leaderboard-trophies">{% if hundos === 4 %}🏆{% endif %}{% if loop.index0 === 0 %}🥇{% elseif loop.index0 === 1 %}🥈{% elseif loop.index0 === 2 %}🥉{% endif %}</td>
-				<td class="leaderboard-url"><a href="{{ site[newestKey].url }}"><code class="url">{{ site[newestKey].url | displayUrl }}</code></a></td>
+				{%- set hasRedirect = site[newestKey].requestedUrl and site[newestKey].url != site[newestKey].requestedUrl %}
+				<td class="leaderboard-url"><a href="{{ site[newestKey].url }}"><code class="url">{{ site[newestKey].url | displayUrl(hasRedirect) }}</code></a>
+					{%- if hasRedirect %}<span class="leaderboard-redirect-warn">Redirect from <code class="url">{{ site[newestKey].requestedUrl | displayUrl(true) }}</code></span>{% endif -%}
+					{%- if site[newestKey].error %}<span class="leaderboard-redirect-error">Error</span>{% endif -%}
+				</td>
 			{%- if site[newestKey].error %}
-				<td colspan="2"><strong>Error</strong></td>
+				<td colspan="2"></td>
 			{%- else %}
 				{%- set counts = counts | hundoCountTotals(site[newestKey]) %}
 				<td class="leaderboard-score">{% if showRank %}<speedlify-score class="leaderboard-score-circles{% if hundos === 4 %} leaderboard-score-circles-400{% endif %}" raw-data='{{ site[newestKey] | toJSON | safe }}'></speedlify-score><span class="leaderboard-score-sum leaderboard-number">{% if hundos === 4 %}😍{% else %}{{ site[newestKey] | lighthouseTotal }}{% endif %}</span>{% endif %}</td>
