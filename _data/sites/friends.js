@@ -19,6 +19,8 @@ module.exports = {
 		"https://www.stevenmengin.com/",
 		"http://nico.computer/",
 		"https://www.lucas.computer/",
-		"https://www.drunkenbyt.es/"
+		"https://www.drunkenbyt.es/",
+		"https://www.pantographe.studio/",
+		"https://www.etamin.studio/",
 	]
 };
