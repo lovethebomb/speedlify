@@ -1,5 +1,5 @@
 module.exports = {
-	description: "Friends & Others",
+	description: "Ilôt Réseau",
 	// skip if localhost
 	// skip if this is a new fork of the speedlify (not Zach’s)
 	skip: !process.env.CONTEXT || process.env.SITE_NAME !== "speedlify-ilot",
@@ -12,9 +12,12 @@ module.exports = {
 		freshChrome: "run",
 	},
 	urls: [
-		"http://nico.computer/",
-		"https://www.kolin.fr/",
-		"https://pantographe.studio/",
-		"https://etamin.studio/"
-	]
-};
+		"https://www.ilotreseau.net/",
+		"https://www.iconomoteur.fr/",
+		"https://dysosmus.net/",
+		"https://inesdurao.me/",
+		"https://www.stevenmengin.com/",
+		"https://www.lucas.computer/",
+		"https://www.drunkenbyt.es/"
+    ]
+}
