@@ -14,7 +14,7 @@ module.exports = {
 	urls: [
 		"http://nico.computer/",
 		"https://www.kolin.fr/",
-		"https://pantographe.studio/",
+		"https://pantographe.studio/en/",
 		"https://etamin.studio/"
 	]
 };
