@@ -16,8 +16,8 @@ module.exports = {
 		"https://www.iconomoteur.fr/",
 		"https://dysosmus.net/",
 		"https://inesdurao.me/",
-		"https://www.stevenmengin.com/",
 		"https://www.lucas.computer/",
-		"https://www.drunkenbyt.es/"
+		"https://www.drunkenbyt.es/",
+		// "https://www.stevenmengin.com/"
     ]
 }
